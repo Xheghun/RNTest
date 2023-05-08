@@ -1,5 +1,5 @@
 
-import { Button, Text, TextInput, View, ScrollView } from 'react-native';
+import { Button, Text, TextInput, View, ScrollView, FlatList } from 'react-native';
 
 import { styles } from './styles/styles.js'
 
@@ -15,7 +15,7 @@ export default function App() {
   }
 
   function addGoalInput() {
-    setCourseGoals(currentGoals =>  [...currentGoals, enteredGoalText])
+    setCourseGoals(currentGoals =>  [...currentGoals, {text: enteredGoalText, key: Math.random.toString()}])
   }
 
   return (
@@ -25,14 +25,15 @@ export default function App() {
         <Button title='Add Goal' onPress={addGoalInput} />
       </View>
       <View style={styles.goalsContainer}>
-      <ScrollView>
-        <Text>List of Goals..</Text>
-        {courseGoals.map((goal) =>
-        <View style={styles.listItemContainer}>
-          <Text style={styles.listItem} key={goal}>{goal}</Text>
-        </View>
-        )}
-      </ScrollView>
+      <Text>List of Goals..</Text>
+      <FlatList data={courseGoals} renderItem={(itemData) => {
+        let goal = itemData.item.text
+        return (
+          <View style={styles.listItemContainer}>
+            <Text style={styles.listItem}>{goal}</Text>
+          </View>
+        );
+      }}  alwaysBounceVertical={false}/>
       </View>
     </View>
   );
