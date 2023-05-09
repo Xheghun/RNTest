@@ -40,5 +40,9 @@ export const styles = StyleSheet.create({
 
     listItem: {
         color: "white"
+    },
+
+    pressedItem: {
+        opacity: 0.6
     }
 });
