@@ -5,17 +5,15 @@ export const styles = StyleSheet.create({
     appContainer: {
         paddingTop: 50,
         paddingHorizontal: 16,
-        flex: 1
+        flex: 1,
     },
 
     inputContainer: {
         flex: 1,
-        flexDirection: "row",
-        justifyContent: "space-between",
+        padding: 16,
+        justifyContent: "center",
         alignItems: 'center',
-        marginBottom: 24,
-        borderBottomWidth: 1,
-        borderBottomColor: '#cccccc'
+        backgroundColor: "#311b6b"
     },
 
     goalsContainer: {
@@ -24,10 +22,13 @@ export const styles = StyleSheet.create({
 
     textInput: {
         borderWidth: 1,
-        borderColor: "#cccccc",
-        width: '75%',
-        marginRight: 8,
-        padding: 6
+        borderColor: "#e4d0ff",
+        backgroundColor: "#e4d0ff",
+        width: '100%',
+        padding: 6,
+        color: "#120438",
+        borderRadius: 6,
+        padding: 16
     },
 
 
@@ -44,5 +45,22 @@ export const styles = StyleSheet.create({
 
     pressedItem: {
         opacity: 0.6
+    },
+
+    modalButtonBarStyle: {
+        flexDirection: "row",
+        marginTop: 16
+
+    },
+
+    modalButton: {
+        width: "25%",
+        marginHorizontal: 8
+    },
+
+    image: {
+        width: 100,
+        height: 100,
+        margin: 20
     }
 });
